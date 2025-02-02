@@ -30,9 +30,9 @@ void main() {
               borderRadius: BorderRadius.circular(28), // Rounded edges
             ),
             child: const Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(Icons.keyboard_arrow_left_sharp, size: 28),
+                Icon(Icons.chevron_left_sharp, size: 32, color: Color.fromARGB(255,252, 186, 86),),
                 Text(
                   "Event Detail",
                   style: TextStyle(
@@ -55,6 +55,7 @@ void main() {
             //Scollable content
 
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Image Widget
 
@@ -70,7 +71,8 @@ void main() {
 
                 Container(
                   margin: const EdgeInsets.only(top: 12, bottom: 12),
-                  decoration: BoxDecoration(color: Colors.green),
+                  // Background colour for aignment debugging
+                  // decoration: BoxDecoration(color: Colors.green),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,7 +82,15 @@ void main() {
                         children: [
                           const Text(
                             'Key Themes',
-                            style: TextStyle(fontSize: 16),
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                shadows: [
+                                  Shadow(
+                                      color: Colors.black,
+                                      offset: Offset(.5, .5),
+                                      blurRadius: .4)
+                                ]),
                           ),
                           Container(
                             margin: const EdgeInsets.only(top: 8),
@@ -114,32 +124,89 @@ void main() {
                               ],
                             ),
                           ),
+                          Container(
+                              margin: const EdgeInsets.only(top: 16),
+                              child: const Text(
+                                'Event Name',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  shadows: [
+                                    Shadow(
+                                      color: Colors.black,
+                                      offset: Offset(1, 1),
+                                    ),
+                                  ],
+                                ),
+                              )),
+                          const Text(
+                            '6th July, 6:00-7:30PM (GMT+5:30)',
+                            style: TextStyle(fontSize: 10),
+                          )
                         ],
                       ),
-                      Column(
-                        // mainAxisAlignment: MainAxisAlignment.start,
-                        // mainAxisSize: MainAxisSize.min,
-                        children: [
-                          TextButton(
+                      Container(
+                        // Background colour for Alignment debugging
+                        // decoration: BoxDecoration(color: Colors.blue),
+                        padding: EdgeInsets.zero,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            // The textButton here have default margins, I don't know how to remove the default margins
+
+                            TextButton(
                               onPressed: () {},
                               style: TextButton.styleFrom(
-                                  backgroundColor: Colors.red,
-                                  foregroundColor: Colors.white,
-                                  alignment: Alignment.topRight,
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 2, horizontal: 12),
-                                  minimumSize: const Size(0, 0)),
+                                backgroundColor: Colors.red,
+                                foregroundColor: Colors.white,
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 2, horizontal: 12),
+                                minimumSize: const Size(0, 0),
+                              ),
                               child: const Row(
                                 children: [
                                   Text('REGISTER NOW'),
                                   Icon(Icons.chevron_right_sharp)
                                 ],
-                              ))
-                        ],
+                              ),
+                            ),
+                            const Text('Speaker:'),
+                            Container(
+                              margin: EdgeInsets.only(top: 8, bottom: 8),
+                              child: ClipOval(
+                                child: Image.asset(
+                                  'assets/image/placeholder_image.jpg',
+                                  height: 80,
+                                  color: const Color.fromARGB(255, 89, 83, 83),
+                                  width: 80,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            const Text(
+                              'Akash Srivastava',
+                              style: TextStyle(fontSize: 8),
+                            )
+                          ],
+                        ),
                       )
                     ],
                   ),
-                )
+                ),
+                const Text(
+                  'About this event',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(.5, .5),
+                      ),
+                    ],
+                  ),
+                ),
+                const Text(
+                    'Join Us for an Inspiring Info Session on the Google Solution Challange! 🎉 \n \nDiscover how technology can solve real-world problems and contribute to achieving UN Sustainable Development Goals (SDGs).\n\n✨ What to Expect:\n\n- Exclusive Insights from a Google Solution Challange Finalist🏆\n\n- Inspiration and Guidance to build impactful projects\n\n- Tips and Strategies to ace this Global-Level Hackathon')
               ],
             ),
           ),
