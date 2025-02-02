@@ -70,6 +70,7 @@ void main() {
 
                 Container(
                   margin: const EdgeInsets.only(top: 12, bottom: 12),
+                  decoration: BoxDecoration(color: Colors.green),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -116,14 +117,15 @@ void main() {
                         ],
                       ),
                       Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
+                        // mainAxisAlignment: MainAxisAlignment.start,
+                        // mainAxisSize: MainAxisSize.min,
                         children: [
                           TextButton(
                               onPressed: () {},
                               style: TextButton.styleFrom(
                                   backgroundColor: Colors.red,
                                   foregroundColor: Colors.white,
+                                  alignment: Alignment.topRight,
                                   padding: const EdgeInsets.symmetric(
                                       vertical: 2, horizontal: 12),
                                   minimumSize: const Size(0, 0)),
